@@ -1,6 +1,6 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  fetch('https://anapioficeandfire.com/api/characters')
+  fetch('https://anapioficeandfire.com/api/books')
   .then((resp)=>resp.json())
   .then(result=>{
     console.log(result)})
@@ -19,15 +19,19 @@ function renderBooks(books) {
     h4.innerHTML =` ${number++}) ${book.characters}`;
     main.appendChild(h4);
   });
-
+  let totalNumber = 0;
   for(let i=0; i<books.length; i++){
+    
     if(i===4){
       const h3 = document.createElement('h3');
       h3.innerHTML = `5th book in the series : ${books[i].name}`;
       main.appendChild(h3);
-      console.log(books[i]);
+      console.log(books[i].characters[1031]);
     }
+    // total number of pages
+    totalNumber += books[i].numberOfPages;
   }
+  console.log(totalNumber);
 }
 
 
