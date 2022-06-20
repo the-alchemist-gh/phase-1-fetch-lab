@@ -31,7 +31,7 @@ function renderBooks(books) {
     // total number of pages
     totalNumber += books[i].numberOfPages;
   }
-  console.log(totalNumber);
+  return totalNumber;
 }
 
 
